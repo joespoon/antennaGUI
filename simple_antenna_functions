@@ -13,22 +13,22 @@ def getFreq():
     frequency = input()
     exponent = 1
     if('k' in frequency):
-        exponent = 1000
+        exponent = 10**3
         exponentName = "kHz"
     if('K' in frequency):
-        exponent = 1000
+        exponent = 1**3
         exponentName = "kHz"
     if('m' in frequency):
-        exponent = 1000000
+        exponent = 1**6
         exponentName = "MHz"
     if('M' in frequency):
-        exponent = 1000000
+        exponent = 1**6
         exponentName = "MHz"
     if('g' in frequency):
-        exponent = 1000000000
+        exponent = 1**9
         exponentName = "GHz"
     if('G' in frequency):
-        exponent = 1000000000
+        exponent = 1**9
         exponentName = "GHz"
     print('Please enter frequency (1-999):')
     frequency = input()
@@ -56,3 +56,10 @@ c = 300000000 # metres/second
 intro()
 frequencyInfo = getFreq()
 displayFreqInfo(frequencyInfo[0],frequencyInfo[3])
+
+# Rayleigh Range - You dont get the full antenna gain until this threshold has been passed
+# RayleighRange = (2 * D^2)/lambda
+# sky - 60cm dish; 2.5cm wavelength
+print("Rayleigh Range for Sky Dish: "+ str((2*(0.6)**2)/0.025) + " metres(?!?!)")
+
+
