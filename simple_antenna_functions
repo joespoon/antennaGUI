@@ -1,0 +1,58 @@
+# define functions
+def intro():
+    print('AntennaGUI v0.1')
+    print('Copyright JoeSpoon 10/12/16')
+    print('Piracy is a crime')
+def getFreq():
+    # Takes in from user kilo-, Mega-, or Giga- prefix and frequency
+    # returns: [frequencyName, exponent, exponentName, wavelength, wavelength/6]
+    # todo - input check
+    # todo - review
+    # todo - make elegant
+    print('Please enter (k)ilo, (m)ega or (g)iga Hz:')
+    frequency = input()
+    exponent = 1
+    if('k' in frequency):
+        exponent = 1000
+        exponentName = "kHz"
+    if('K' in frequency):
+        exponent = 1000
+        exponentName = "kHz"
+    if('m' in frequency):
+        exponent = 1000000
+        exponentName = "MHz"
+    if('M' in frequency):
+        exponent = 1000000
+        exponentName = "MHz"
+    if('g' in frequency):
+        exponent = 1000000000
+        exponentName = "GHz"
+    if('G' in frequency):
+        exponent = 1000000000
+        exponentName = "GHz"
+    print('Please enter frequency (1-999):')
+    frequency = input()
+    frequencyName = (str(frequency) + ' ' + str(exponentName))
+    frequency = (int(frequency)*int(exponent))
+    wavelength = c/frequency # metres
+    
+    return [frequencyName, exponent, exponentName, wavelength, wavelength/6]
+
+def displayFreqInfo(frequencyName, wavelength):
+    if wavelength < 1:
+         print ('The wavelength of '+ frequencyName + ' is: ' + str(wavelength*1000) + ' milli-metres.' )
+    else:
+        print ('The wavelength of '+ frequencyName + ' is: ' + str(wavelength) + ' metres.' )
+    if (wavelength/6) < 1:
+         print ('Lambda/6: ' + str((wavelength/6)*1000) + ' milli-metres.' )
+    else:
+        print ('Lambda/6: ' + str((wavelength/6)) + ' metres.' )
+    
+
+# constants
+c = 300000000 # metres/second
+
+# main
+intro()
+frequencyInfo = getFreq()
+displayFreqInfo(frequencyInfo[0],frequencyInfo[3])
