@@ -9,3 +9,11 @@ Anyway, just a thought.  If you can read/edit this, then we have made a good sta
 
 I could also do with some software which takes in text files and creates a graph.  If you have any code or experience of this, let me know.
 
+UPDATE********* 11/12/16
+I have found a python RF Toolkit:
+
+http://scikit-rf-web.readthedocs.io/install.html
+
+Found via:
+https://www.microwaves101.com/cool-links/860-cool-links accessed 11/12/16 - JS
+
